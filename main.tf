@@ -67,7 +67,7 @@ EOF
 
 # create an S3 object for the webapp
 resource "aws_s3_object" "webapp" {
-  acl          = "public-read"
+  acl          = "BucketOwnerEnforced"
   key          = "index.html"
   bucket       = aws_s3_bucket.demo_bucket.id
   content      = file("${path.module}/index.html")
